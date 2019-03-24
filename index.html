@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    .clearfix::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    body{
+        background-color: black;
+        overflow: hidden;
+    }
+    img{
+        display: block;
+    }
+    #production p{	
+        position: absolute;
+        right: 10px;
+        color : rgb(13,227,254);
+        font-family: 'BankGothic Md BT', monospace;
+        font-size : 12pt;
+        opacity : 1;
+    }
+    #production .num1{
+        top: 34px;
+    }
+    #production .num2{
+        top: 58px;
+    }
+    #production .num3{
+        top: 83px;
+    }
+    #production .num4{
+        top: 106px;
+    }
+    .item{
+        display: block;
+        position: relative;
+        padding: 10px 0;
+    }
+    .item-deep{
+        display: block;
+        position: relative;
+        padding: 0;
+        top: -10px;
+        left: -8px;
+    }
+    .form{
+        display: block;
+        float: left;
+        padding: 10px 8px;
+    }
+    #main{
+        display: block;
+        float: left;
+    }
+</style>
+<body>
+    <div id="wrap" class="clearfix">
+        <div id="main">
+            <div id="left-form" class="form">
+                <div id="table" class="item-deep">
+                    <img src="png/table.png">
+                </div>
+                <div id="map" class="item">
+                    <img src="png/map.png">
+                </div>
+            </div>
+            <div id="center-form" class="form">
+                <div id="messanger" class="item">
+                    <img src="png/messanger.png">
+                </div>
+            </div>
+            <div id="right-form" class="form">
+                <div id="production" class="item">
+                    <img src="png/production.png">
+                    <p class="num1">30%</p>
+                    <p class="num2">40%</p>
+                    <p class="num3">50%</p>
+                    <p class="num4">60%</p>
+                    
+                </div>
+                <div id="schedules" class="item">
+                    <img src="png/schedules.png">
+                </div>
+                <div id="processor" class="item">
+                    <img src="png/processor.png">
+                </div>
+                <div id="process" class="item">
+                    <img src="png/process.png">
+                </div>
+                <div id="button" class="item">
+                    <img src="png/button.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
