@@ -141,7 +141,83 @@
     .schedule-barf{
         background-color: #0de3fe;
     }
-    /*schedules End*/
+    /*Schedules End*/
+    /*Server Start*/
+    #server{
+        height: 300px;
+    }
+    #server .cpu{
+        position: absolute;
+        top: 30px;
+    }
+    .linear {
+    	height:0px; 
+        position: absolute;
+    	border: 1px solid #0de3fe;
+    	background-color: #0de3fe;
+    }
+    #server .l1{
+        width: 100px;
+        top: 86px;
+        left: 80px;
+    	transform:rotate(-45deg);
+    }
+    #server .l2{
+        width: 300px;
+        top: 50px;
+        left: 167px;
+    }
+    #server .l3{
+        width: 50px;
+        top: 105px;
+        left: 140px;
+    	transform:rotate(-45deg);
+    }
+    #server .l4{
+        width: 300px;
+        top: 86px;
+        left: 184px;
+    }
+    #server .l5{
+        width: 30px;
+        top: 201px;
+        left: 140px;
+    	transform:rotate(45deg);
+    }
+    #server .l6{
+        width: 300px;
+        top: 212px;
+        left: 167px;
+    }
+    #server .word{
+        position: absolute;
+        font-size: 18px;
+    }
+    #server .p1{
+        top: 30px;
+        left: 167px;
+    }
+    #server .p2{
+        top: 66px;
+        left: 184px;
+    }
+    #server .p3{
+        top: 192px;
+        left: 167px;
+    }
+    #server .box{
+        position: absolute;
+        top: 94px;
+        left: 194px;
+    }
+    #server .box .block{
+        float: left;
+        width: 20px;
+        height: 10px;
+        background-color: #06717e;
+        margin: 3px;
+    }
+    /*Server End*/
 </style>
 <body>
     <div id="wrap" class="clearfix">
@@ -234,6 +310,90 @@
                             <div class="bar schedule-bar"></div>
                             <div class="bar schedule-barf"></div>
                         </div>
+                    </div>
+                </div>
+                <div id="server" class="item">
+                    <div class="banner">
+                        <p>center server load and main process</p>
+                        <div class="banner-line"></div>
+                    </div>
+                    <img class="cpu" src="png/cpu.png">
+                    <div class="linear l1"></div>
+                    <div class="linear l2"></div>
+                    <div class="linear l3"></div>
+                    <div class="linear l4"></div>
+                    <div class="linear l5"></div>
+                    <div class="linear l6"></div>
+                    <p class="word p1">core temperature : 85℃</p>
+                    <p class="word p2">main frequency : 5.20GHz</p>
+                    <p class="word p3">processor utilization : 89%</p>
+                    <div class="box">
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
+                        <div class="block"></div>
                     </div>
                 </div>
                 <div id="processor" class="item">
