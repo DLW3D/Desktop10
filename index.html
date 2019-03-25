@@ -17,50 +17,99 @@
         background-color: black;
         overflow: hidden;
     }
+    
     img{
         display: block;
     }
-    #production p{	
-        position: absolute;
-        right: 10px;
-        color : rgb(13,227,254);
+    p{
+        color : #0de3fe;
         font-family: 'BankGothic Md BT', monospace;
-        font-size : 12pt;
+        font-size : 16px;
         opacity : 1;
-    }
-    #production .num1{
-        top: 34px;
-    }
-    #production .num2{
-        top: 58px;
-    }
-    #production .num3{
-        top: 83px;
-    }
-    #production .num4{
-        top: 106px;
+        text-shadow: 0 0 10px #0de3fe;
     }
     .item{
         display: block;
         position: relative;
-        padding: 10px 0;
+        margin: 10px 0;
     }
     .item-deep{
         display: block;
         position: relative;
-        padding: 0;
+        margin: 0;
         top: -10px;
         left: -8px;
+    }
+    .item .pices{
+        width: 100%;
     }
     .form{
         display: block;
         float: left;
-        padding: 10px 8px;
+        margin: 10px 8px;
     }
     #main{
         display: block;
         float: left;
     }
+    /*banner*/
+    .item .banner{
+        width: 100%;
+        top: 0;
+        margin-top: 0px;
+    }
+    .item .banner p{
+        font-size: 16px;
+    }
+    .banner-line{
+        width: 100%;
+        height: 0px;
+        border-top: none;
+        border-bottom: 5px #0de3fe solid;
+        border-right: 5px transparent solid;
+        border-left: none;
+    }
+    /*Production Start*/
+    /*wordl*/   
+    #production .wordn{
+        float: left;
+    }
+    .wordn .num{
+        font-size : 23px;
+        margin-bottom: -2px;
+    }
+    /*bar*/
+    #production .box{
+        float: left;
+        position: relative;
+        margin-top: -2px;
+        margin-left: 6px;
+    }
+    .box .bar{
+        background-color: #06717e;
+    }
+    .box .boxf{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .box .barf{
+        background-color: #0de3fe;
+    }
+    .box div[class^="bar"]{
+        width: 310px;
+        height: 10px;
+        margin-top: 12px;
+    }
+    /*wordr*/
+    #production .wordp{
+        float: right;
+    }
+    .wordp .num{
+        margin-top: 6px;
+        text-align: right;
+    }
+    /*Production End*/
 </style>
 <body>
     <div id="wrap" class="clearfix">
@@ -79,13 +128,38 @@
                 </div>
             </div>
             <div id="right-form" class="form">
-                <div id="production" class="item">
-                    <img src="png/production.png">
-                    <p class="num1">30%</p>
-                    <p class="num2">40%</p>
-                    <p class="num3">50%</p>
-                    <p class="num4">60%</p>
-                    
+                <div id="production" class="item clearfix">
+                    <!-- <img src="png/production.png"> -->
+                    <div class="banner">
+                        <p>process and task schedule</p>
+                        <div class="banner-line"></div>
+                    </div>
+                    <div class="pices">
+                        <div class="wordn">
+                            <p class="num">cc</p>
+                            <p class="num">p-alloy</p>
+                            <p class="num">hpc</p>
+                            <p class="num">gpccpu</p>
+                        </div>
+                        <div class="box">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="boxf">
+                                <div class="barf"></div>
+                                <div class="barf"></div>
+                                <div class="barf"></div>
+                                <div class="barf"></div>
+                            </div>
+                        </div>
+                        <div class="wordp">
+                            <p class="num">100%</p>
+                            <p class="num">40%</p>
+                            <p class="num">0%</p>
+                            <p class="num">60.23%</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="schedules" class="item">
                     <img src="png/schedules.png">
