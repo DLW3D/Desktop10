@@ -15,7 +15,7 @@
     }
     body{
         background-color: black;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     
     img{
@@ -79,6 +79,11 @@
         margin-bottom: -2px;
     }
     /*bar*/
+    .box div[class^="bar"]{
+        width: 310px;
+        height: 10px;
+        margin-top: 12px;
+    }
     #production .box{
         float: left;
         position: relative;
@@ -96,11 +101,6 @@
     .box .barf{
         background-color: #0de3fe;
     }
-    .box div[class^="bar"]{
-        width: 310px;
-        height: 10px;
-        margin-top: 12px;
-    }
     /*wordr*/
     #production .wordp{
         float: right;
@@ -110,13 +110,45 @@
         text-align: right;
     }
     /*Production End*/
+    /*schedules Start*/
+    .schedule-tab{
+        height: 50px;
+        border: 2px solid #0de3fe;
+        padding: 0 10px;
+        margin-top: 5px;
+    }
+    .schedule-name{
+        font-size: 23px;
+        float: left;
+    }
+    .schedule-percent{
+        font-size: 20px;
+        margin-top: 3px;
+        float: right;
+    }
+    .schedule-box{
+        position: relative;
+    }
+    .schedule-box .bar{
+        position: absolute;
+        width: 457px;
+        height: 10px;
+        margin-top: 5px;
+    }
+    .schedule-bar{
+        background-color: #06717e;
+    }
+    .schedule-barf{
+        background-color: #0de3fe;
+    }
+    /*schedules End*/
 </style>
 <body>
     <div id="wrap" class="clearfix">
         <div id="main">
             <div id="left-form" class="form">
                 <div id="table" class="item-deep">
-                    <img src="png/table.png">
+                    <!-- <img src="png/table.png"> -->
                 </div>
                 <div id="map" class="item">
                     <img src="png/map.png">
@@ -124,7 +156,7 @@
             </div>
             <div id="center-form" class="form">
                 <div id="messanger" class="item">
-                    <img src="png/messanger.png">
+                    <!-- <img src="png/messanger.png"> -->
                 </div>
             </div>
             <div id="right-form" class="form">
@@ -162,7 +194,47 @@
                     </div>
                 </div>
                 <div id="schedules" class="item">
-                    <img src="png/schedules.png">
+                    <!-- <img src="png/schedules.png"> -->
+                    <div class="schedule-tab">
+                        <div class="clearfix">
+                            <p class="schedule-name">vcf messenger cover</p>
+                            <p class="schedule-percent">waiting</p>
+                        </div>
+                        <div class="schedule-box">
+                            <div class="bar schedule-bar"></div>
+                            <div class="bar schedule-barf"></div>
+                        </div>
+                    </div>
+                    <div class="schedule-tab">
+                        <div class="clearfix">
+                            <p class="schedule-name">defender missle array</p>
+                            <p class="schedule-percent">ready</p>
+                        </div>
+                        <div class="schedule-box">
+                            <div class="bar schedule-bar"></div>
+                            <div class="bar schedule-barf"></div>
+                        </div>
+                    </div>
+                    <div class="schedule-tab">
+                        <div class="clearfix">
+                            <p class="schedule-name">inv abnormal psychic events</p>
+                            <p class="schedule-percent">58%</p>
+                        </div>
+                        <div class="schedule-box">
+                            <div class="bar schedule-bar"></div>
+                            <div class="bar schedule-barf"></div>
+                        </div>
+                    </div>
+                    <div class="schedule-tab">
+                        <div class="clearfix">
+                            <p class="schedule-name">ums research</p>
+                            <p class="schedule-percent">99%</p>
+                        </div>
+                        <div class="schedule-box">
+                            <div class="bar schedule-bar"></div>
+                            <div class="bar schedule-barf"></div>
+                        </div>
+                    </div>
                 </div>
                 <div id="processor" class="item">
                     <img src="png/processor.png">
