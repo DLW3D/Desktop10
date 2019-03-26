@@ -274,12 +274,15 @@
         /* 避免下面 .messanger-top3 的 display: inline-block; 产生行间距*/
         font-size: 0;
     }
-    #messanger img{margin-top: 100px;}
+    .toptoptop{margin-top: 100px;}
     .messanger-banner{
         height: 18px;
         border: 2px solid #0de3fe;
         padding: 0 5px;
         margin-top: 5px;
+    }
+    .messanger-banner p{
+        text-align: left;
     }
     .messanger-top1{
         background-color: #0de3fe;
@@ -313,7 +316,7 @@
     }
     .messanger-top4{
         height: 0px;
-        width: 200px;
+        width: 250px;
         margin-top: 2px;
         margin-left: auto;
         margin-right: auto;
@@ -325,7 +328,7 @@
     }
     .messanger-top5{
         height: 0px;
-        width: 200px;
+        width: 250px;
         margin-top: 2px;
         margin-left: auto;
         margin-right: auto;
@@ -344,17 +347,30 @@
     /*Messanger Logo*/
     .messanger-logo{
         float: left;
-        margin: 8px 10px;
+        margin: 6px 10px 4px 10px;
     }
     .messanger-logo-box{
         height: 200px;
         width: 200px;
         border: 2px #0de3fe solid;
+        background-color: #06717e;
     }
+    .messanger-logo-box .logo{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: url(png/logo.png) no-repeat center center;
+    } 
+    .messanger-logo-box .logo-lite{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: url(png/logo-lite.png) no-repeat center center;
+    } 
     /*Messanger Tab*/
     .messanger-tab-box{
         float: left;
-        margin-top: -4px;
+        margin-top: -6px;
     }
     .messanger-tab{
         position: relative;
@@ -364,9 +380,11 @@
     }
     .messanger-tab-l{
         margin-right: 10px;
+        text-align: right;
     }
     .messanger-tab-r{
         margin-left: 10px;
+        text-align: left;
     }
     .messanger-tab::before{
         /* 梯形边框,魔改自 https://www.cnblogs.com/aloneCode/p/6927597.html */
@@ -386,7 +404,7 @@
         transform-origin: bottom left;
     }
     .messanger-tab-shape{
-        position: relative;
+        position: absolute;
         top: -2.06px;
         height: 42.06px;
         width: 8px;
@@ -397,6 +415,22 @@
     }
     .messanger-tab-shape-r{
         left: -10px;
+    }
+    /*word*/
+    .messanger-name{
+        font-size: 22px;
+        margin: 0 10px;
+    }
+    .messanger-detail{
+        font-size: 14px;
+        /*禁止换行*/
+        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .messanger-detail-l{
+        margin: -2px 10px 0 -10px;
+    }
+    .messanger-detail-r{
+        margin: -2px -10px 0 10px;
     }
     /*Messenger End*/
 </style>
@@ -412,6 +446,7 @@
                 </div>
             </div>
             <div id="center-form" class="form">
+                <!-- Messanger Start -->
                 <div id="messanger" class="item">
                     <div class="messanger-banner">
                         <p>BPX so-terminal 2/25 23:20:29</p>
@@ -431,34 +466,53 @@
                     <div class="messanger-middle clearfix">
                         <div class="messanger-tab-box">
                             <div class="messanger-tab messanger-tab-l">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-l">message detail long long long long long end</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-l"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-l">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-l">message detail</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-l"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-l">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-l">message detail long long </p>
                                 <div class="messanger-tab-shape messanger-tab-shape-l"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-l">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-l">message detail long long ago</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-l"></div>
                             </div>
                         </div>
                         <div class="messanger-logo">
                             <div class="messanger-logo-box">
-
+                                    <div class="logo"></div>
+                                    <div class="logo-lite"></div>
+                                    <!-- <img src="png/logo.png">
+                                    <img src="png/logo-lite.png"> -->
                             </div>
                         </div>
                         <div class="messanger-tab-box">
                             <div class="messanger-tab messanger-tab-r">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-r">message detail long long long long long end</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-r"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-r">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-r">message detail</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-r"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-r">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-r">message detail long long</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-r"></div>
                             </div>
                             <div class="messanger-tab messanger-tab-r">
+                                <p class="messanger-name">unknow message</p>
+                                <p class="messanger-detail messanger-detail-r">message detail long long before</p>
                                 <div class="messanger-tab-shape messanger-tab-shape-r"></div>
                             </div>
                         </div>
