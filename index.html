@@ -47,7 +47,7 @@
     .item-deep{
         display: block;
         position: relative;
-        margin: 0;
+        margin-right: -10px;
         top: -10px;
         left: -8px;
     }
@@ -60,7 +60,7 @@
         margin: 10px 8px;
     }
     #left-form{
-        margin-right: 0;
+        margin-right: 10px;
     }
     #main{
         display: block;
@@ -76,7 +76,6 @@
         font-size: 16px;
     }
     .banner-line{
-        width: 100%;
         height: 0px;
         border-top: none;
         border-bottom: 5px #0de3fe solid;
@@ -134,6 +133,42 @@
         left: -5px;
     }
     /*Table End*/
+    /*Map Start*/
+    .map-box{
+        position: relative;
+        height: 475px;
+        width: 475px;
+        margin: 5px;
+        text-align: center;
+    }
+    .map-cercle{
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        margin: auto;
+        border-radius: 50%;
+    }
+    .map-cercle1{
+        width: 465px;
+        height: 465px;
+        border: 2px #06717e solid;
+    }
+    .map-cercle2{
+        width: 450px;
+        height: 450px;
+        border: 5px #06717e solid;
+    }
+    .map-cercle3{
+        background: url(png/2d-cercle.png) no-repeat center center;
+    }
+    .map-cercle4{
+        width: 420px;
+        height: 420px;
+        border: 2px #06717e solid;
+    }
+    .map-cercle5{
+        background: url(png/tick.png) no-repeat center center;
+    }
+    /*Map End*/
     /*Production Start*/
     /*wordl*/
     #production .wordn{
@@ -534,10 +569,21 @@
                     <div class="table-border1"></div>
                     <div class="table-border2"></div>
                     <div class="clear"></div>
-                    <img class="toptoptop" src="png/table.png">
+                    <!-- <img src="png/table.png"> -->
                 </div>
                 <div id="map" class="item">
-                    <img src="png/map.png">
+                    <div class="banner">
+                        <p>inv wave map</p>
+                        <div class="banner-line"></div>
+                    </div>
+                    <div class="map-box">
+                        <div class="map-cercle map-cercle1"></div>
+                        <div class="map-cercle map-cercle2"></div>
+                        <div class="map-cercle map-cercle3"></div>
+                        <div class="map-cercle map-cercle4"></div>
+                        <div class="map-cercle map-cercle5"></div>
+                    </div>
+                    <img class="toptoptop" src="png/map.png">
                 </div>
             </div>
             <div id="center-form" class="form">
