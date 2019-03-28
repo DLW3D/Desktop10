@@ -227,16 +227,24 @@ p{
 .process-cpu{
     position: absolute;
     top: 30px;
-    background: url(png/cpu+.png) no-repeat center center;
     width: 188px;
     height: 188px;
 }
-.process-cpu-lite{
-    position: absolute;
-    top: 30px;
-    background: url(png/cpu-lite+.png) no-repeat center center;
-    width: 188px;
-    height: 188px;
+.process-cpu-deep{
+    background: url(png/cpu-deep.png) no-repeat center center;
+    transform:scaleX(-1);
+}
+.process-cpu-cercle1{
+    background: url(png/cpu-cercle1.png) no-repeat center center;
+}
+.process-cpu-cercle2{
+    background: url(png/cpu-cercle2.png) no-repeat center center;
+}
+.process-cpu-cercle3{
+    background: url(png/cpu-cercle3.png) no-repeat center center;
+}
+.process-cpu-cercle4{
+    background: url(png/cpu-cercle4.png) no-repeat center center;
 }
 .linear {
     height:0px; 
@@ -569,20 +577,38 @@ p{
 /*CPU*/
 @keyframes opacity-half{
     0%{opacity:0;}
-    100%{opacity:0.5;}
+    100%{opacity:0.3;}
 }
 @keyframes opacity-add{
-    0%{opacity:0.5;}
+    0%{opacity:0.3;}
     100%{opacity:1;}
 }
-.process-cpu{
+.process-cpu-deep{
     opacity:0.5;
 }
-.process-cpu-lite{
+.process-cpu-cercle1{
+    opacity:0;
+    animation:opacity-half 10s 35s,
+    opacity-add 5s 45s infinite alternate,
+    cercle linear 15s infinite;
+}
+.process-cpu-cercle2{
+    opacity:0;
+    animation:opacity-half 10s 20s,
+    opacity-add 15s 30s infinite alternate,
+    cercle linear 30s infinite;
+}
+.process-cpu-cercle3{
     opacity:0;
     animation:opacity-half 10s 5s,
-    opacity-add 30s 15s infinite alternate,
-    cercle linear 20s infinite;
+    opacity-add 15s 15s infinite alternate,
+    cercle linear 20s infinite reverse;
+}
+.process-cpu-cercle4{
+    opacity:0;
+    animation:opacity-half 5s,
+    opacity-add 30s 5s infinite alternate,
+    cercle linear 60s infinite;
 }
 /*Table*/
 @keyframes color{
