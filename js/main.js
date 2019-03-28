@@ -37,3 +37,32 @@ function fun(timeID){ 
     time =  y+"-"+m+"-"+d+" "+h+":"+minute+":"+s+"."+sss
     $("#"+timeID).text("BPX so-terminal " + time);
 }
+
+var blocks;
+$(document).ready(function(){
+    // #server .block状态初始化
+    blocks = $("#server .box>*");
+    blocks.each(function(index){
+        $(this).css("background-color", "#06717e");
+    });
+});
+// #server .block状态变化
+setTimeout(function(){setInterval("block_change()",100)},15000);
+function block_change(){
+    if (random(0,9)==0){
+        $(blocks[random(0,blocks.length)]).css("background-color", "#0de3fe");
+    }
+    if (random(0,19)==0){
+        setTimeout(function(){
+            $(blocks[random(0,blocks.length)]).css("background-color", "#06717e");
+            },50);
+        
+    }
+}
+
+//随机函数:在范围内取整
+function random(Min, Max) {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return(Min + Math.round(Rand * Range));
+}

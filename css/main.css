@@ -323,6 +323,7 @@ p a{
     height: 10px;
     background-color: #06717e;
     margin: 3px;
+
 }
 /*Server End*/
 /*Process Start*/
@@ -559,7 +560,7 @@ p a{
 /*动态效果*/
 /*Button*/
 .button-box{
-	transition: box-shadow 1s;
+	transition: box-shadow .3s;
 }
 #button:hover div{
     border-color: #0de3fe;
@@ -580,13 +581,23 @@ p a{
 /*map*/
 @keyframes cercle{
     0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes cercle-boot{
+    0%{transform: rotate(0deg);}
+    32%{transform: rotate(-60deg);}
+    33%{transform: rotate(-60deg);}
+    65%{transform: rotate(-180deg);}
+    66%{transform: rotate(-180deg);}
+    99%{transform: rotate(-360deg);}
     100%{transform: rotate(-360deg);}
 }
 .map-cercle3{
-    animation:cercle linear 20s infinite;
+    animation:cercle-boot linear 40s infinite,
+    cercle linear 20s 40s infinite reverse;
 }
 /*CPU*/
-@keyframes opacity-half{
+@keyframes opacity-boot{
     0%{opacity:0;}
     100%{opacity:0.3;}
 }
@@ -597,27 +608,31 @@ p a{
 .process-cpu-deep{
     opacity:0.5;
 }
+/*外层*/
 .process-cpu-cercle1{
     opacity:0;
-    animation:opacity-half 10s 35s,
+    animation:opacity-boot 10s 35s,
     opacity-add 5s 45s infinite alternate,
     cercle linear 15s infinite;
 }
+/*内粗线层*/
 .process-cpu-cercle2{
     opacity:0;
-    animation:opacity-half 10s 20s,
+    animation:opacity-boot 10s 20s,
     opacity-add 15s 30s infinite alternate,
     cercle linear 30s infinite;
 }
+/*内细线层*/
 .process-cpu-cercle3{
     opacity:0;
-    animation:opacity-half 10s 5s,
+    animation:opacity-boot 10s 5s,
     opacity-add 15s 15s infinite alternate,
     cercle linear 20s infinite reverse;
 }
+/*bord层*/
 .process-cpu-cercle4{
     opacity:0;
-    animation:opacity-half 5s,
+    animation:opacity-boot 5s,
     opacity-add 30s 5s infinite alternate,
     cercle linear 60s infinite;
 }
@@ -626,81 +641,86 @@ p a{
     0%{background-color: #06717e;}
     100%{background-color: #0de3fe;}
 }
+@keyframes color-bord{
+    0%{border-color: #06717e;}
+    100%{border-color: #0de3fe;}
+}
 .table-cross{
-    animation: color 3.6s infinite alternate;
+    animation: opacity linear 3.6s infinite alternate-reverse;
 }
-.table-cross:after{
-    animation: color 3.6s infinite alternate;
-}
-.table-cross:nth-of-type(1){        animation-delay: 100ms}
-.table-cross:nth-of-type(1)::after{ animation-delay: 100ms}
-.table-cross:nth-of-type(2){        animation-delay: 200ms}
-.table-cross:nth-of-type(2)::after{ animation-delay: 200ms}
-.table-cross:nth-of-type(3){        animation-delay: 300ms}
-.table-cross:nth-of-type(3)::after{ animation-delay: 300ms}
-.table-cross:nth-of-type(4){        animation-delay: 400ms}
-.table-cross:nth-of-type(4)::after{ animation-delay: 400ms}
-.table-cross:nth-of-type(5){        animation-delay: 500ms}
-.table-cross:nth-of-type(5)::after{ animation-delay: 500ms}
-.table-cross:nth-of-type(6){        animation-delay: 600ms}
-.table-cross:nth-of-type(6)::after{ animation-delay: 600ms}
-.table-cross:nth-of-type(7){        animation-delay: 700ms}
-.table-cross:nth-of-type(7)::after{ animation-delay: 700ms}
-.table-cross:nth-of-type(8){        animation-delay: 800ms}
-.table-cross:nth-of-type(8)::after{ animation-delay: 800ms}
-.table-cross:nth-of-type(9){        animation-delay: 900ms}
-.table-cross:nth-of-type(9)::after{ animation-delay: 900ms}
-.table-cross:nth-of-type(10){        animation-delay: 1000ms}
-.table-cross:nth-of-type(10)::after{ animation-delay: 1000ms}
-.table-cross:nth-of-type(11){        animation-delay: 1100ms}
-.table-cross:nth-of-type(11)::after{ animation-delay: 1100ms}
-.table-cross:nth-of-type(12){        animation-delay: 1200ms}
-.table-cross:nth-of-type(12)::after{ animation-delay: 1200ms}
-.table-cross:nth-of-type(13){        animation-delay: 1300ms}
-.table-cross:nth-of-type(13)::after{ animation-delay: 1300ms}
-.table-cross:nth-of-type(14){        animation-delay: 1400ms}
-.table-cross:nth-of-type(14)::after{ animation-delay: 1400ms}
+.table-cross:nth-of-type(1){        animation-delay: 300ms}
+.table-cross:nth-of-type(1)::after{ animation-delay: 300ms}
+.table-cross:nth-of-type(2){        animation-delay: 600ms}
+.table-cross:nth-of-type(2)::after{ animation-delay: 600ms}
+.table-cross:nth-of-type(3){        animation-delay: 900ms}
+.table-cross:nth-of-type(3)::after{ animation-delay: 900ms}
+.table-cross:nth-of-type(4){        animation-delay: 1200ms}
+.table-cross:nth-of-type(4)::after{ animation-delay: 1200ms}
+.table-cross:nth-of-type(5){        animation-delay: 1500ms}
+.table-cross:nth-of-type(5)::after{ animation-delay: 1500ms}
+.table-cross:nth-of-type(6){        animation-delay: 1800ms}
+.table-cross:nth-of-type(6)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(7){        animation-delay: 600ms}
+.table-cross:nth-of-type(7)::after{ animation-delay: 600ms}
+.table-cross:nth-of-type(8){        animation-delay: 900ms}
+.table-cross:nth-of-type(8)::after{ animation-delay: 900ms}
+.table-cross:nth-of-type(9){        animation-delay: 1200ms}
+.table-cross:nth-of-type(9)::after{ animation-delay: 1200ms}
+.table-cross:nth-of-type(10){        animation-delay: 1500ms}
+.table-cross:nth-of-type(10)::after{ animation-delay: 1500ms}
+.table-cross:nth-of-type(11){        animation-delay: 1800ms}
+.table-cross:nth-of-type(11)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(12){        animation-delay: 2100ms}
+.table-cross:nth-of-type(12)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(13){        animation-delay: 900ms}
+.table-cross:nth-of-type(13)::after{ animation-delay: 900ms}
+.table-cross:nth-of-type(14){        animation-delay: 1200ms}
+.table-cross:nth-of-type(14)::after{ animation-delay: 1200ms}
 .table-cross:nth-of-type(15){        animation-delay: 1500ms}
 .table-cross:nth-of-type(15)::after{ animation-delay: 1500ms}
-.table-cross:nth-of-type(16){        animation-delay: 1600ms}
-.table-cross:nth-of-type(16)::after{ animation-delay: 1600ms}
-.table-cross:nth-of-type(17){        animation-delay: 1700ms}
-.table-cross:nth-of-type(17)::after{ animation-delay: 1700ms}
-.table-cross:nth-of-type(18){        animation-delay: 1800ms}
-.table-cross:nth-of-type(18)::after{ animation-delay: 1800ms}
-.table-cross:nth-of-type(19){        animation-delay: 1900ms}
-.table-cross:nth-of-type(19)::after{ animation-delay: 1900ms}
-.table-cross:nth-of-type(20){        animation-delay: 2000ms}
-.table-cross:nth-of-type(20)::after{ animation-delay: 2000ms}
-.table-cross:nth-of-type(21){        animation-delay: 2100ms}
-.table-cross:nth-of-type(21)::after{ animation-delay: 2100ms}
-.table-cross:nth-of-type(22){        animation-delay: 2200ms}
-.table-cross:nth-of-type(22)::after{ animation-delay: 2200ms}
-.table-cross:nth-of-type(23){        animation-delay: 2300ms}
-.table-cross:nth-of-type(23)::after{ animation-delay: 2300ms}
-.table-cross:nth-of-type(24){        animation-delay: 2400ms}
-.table-cross:nth-of-type(24)::after{ animation-delay: 2400ms}
-.table-cross:nth-of-type(25){        animation-delay: 2500ms}
-.table-cross:nth-of-type(25)::after{ animation-delay: 2500ms}
-.table-cross:nth-of-type(26){        animation-delay: 2600ms}
-.table-cross:nth-of-type(26)::after{ animation-delay: 2600ms}
-.table-cross:nth-of-type(27){        animation-delay: 2700ms}
-.table-cross:nth-of-type(27)::after{ animation-delay: 2700ms}
-.table-cross:nth-of-type(28){        animation-delay: 2800ms}
-.table-cross:nth-of-type(28)::after{ animation-delay: 2800ms}
-.table-cross:nth-of-type(29){        animation-delay: 2900ms}
-.table-cross:nth-of-type(29)::after{ animation-delay: 2900ms}
+.table-cross:nth-of-type(16){        animation-delay: 1800ms}
+.table-cross:nth-of-type(16)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(17){        animation-delay: 2100ms}
+.table-cross:nth-of-type(17)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(18){        animation-delay: 2400ms}
+.table-cross:nth-of-type(18)::after{ animation-delay: 2400ms}
+.table-cross:nth-of-type(19){        animation-delay: 1200ms}
+.table-cross:nth-of-type(19)::after{ animation-delay: 1200ms}
+.table-cross:nth-of-type(20){        animation-delay: 1500ms}
+.table-cross:nth-of-type(20)::after{ animation-delay: 1500ms}
+.table-cross:nth-of-type(21){        animation-delay: 1800ms}
+.table-cross:nth-of-type(21)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(22){        animation-delay: 2100ms}
+.table-cross:nth-of-type(22)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(23){        animation-delay: 2400ms}
+.table-cross:nth-of-type(23)::after{ animation-delay: 2400ms}
+.table-cross:nth-of-type(24){        animation-delay: 2700ms}
+.table-cross:nth-of-type(24)::after{ animation-delay: 2700ms}
+.table-cross:nth-of-type(25){        animation-delay: 1500ms}
+.table-cross:nth-of-type(25)::after{ animation-delay: 1500ms}
+.table-cross:nth-of-type(26){        animation-delay: 1800ms}
+.table-cross:nth-of-type(26)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(27){        animation-delay: 2100ms}
+.table-cross:nth-of-type(27)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(28){        animation-delay: 2400ms}
+.table-cross:nth-of-type(28)::after{ animation-delay: 2400ms}
+.table-cross:nth-of-type(29){        animation-delay: 2700ms}
+.table-cross:nth-of-type(29)::after{ animation-delay: 2700ms}
 .table-cross:nth-of-type(30){        animation-delay: 3000ms}
 .table-cross:nth-of-type(30)::after{ animation-delay: 3000ms}
-.table-cross:nth-of-type(31){        animation-delay: 3100ms}
-.table-cross:nth-of-type(31)::after{ animation-delay: 3100ms}
-.table-cross:nth-of-type(32){        animation-delay: 3200ms}
-.table-cross:nth-of-type(32)::after{ animation-delay: 3200ms}
-.table-cross:nth-of-type(33){        animation-delay: 3300ms}
-.table-cross:nth-of-type(33)::after{ animation-delay: 3300ms}
-.table-cross:nth-of-type(34){        animation-delay: 3400ms}
-.table-cross:nth-of-type(34)::after{ animation-delay: 3400ms}
-.table-cross:nth-of-type(35){        animation-delay: 3500ms}
-.table-cross:nth-of-type(35)::after{ animation-delay: 3500ms}
-.table-cross:nth-of-type(36){        animation-delay: 3600ms}
-.table-cross:nth-of-type(36)::after{ animation-delay: 3600ms}
+.table-cross:nth-of-type(31){        animation-delay: 1800ms}
+.table-cross:nth-of-type(31)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(32){        animation-delay: 2100ms}
+.table-cross:nth-of-type(32)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(33){        animation-delay: 2400ms}
+.table-cross:nth-of-type(33)::after{ animation-delay: 2400ms}
+.table-cross:nth-of-type(34){        animation-delay: 2700ms}
+.table-cross:nth-of-type(34)::after{ animation-delay: 2700ms}
+.table-cross:nth-of-type(35){        animation-delay: 3000ms}
+.table-cross:nth-of-type(35)::after{ animation-delay: 3000ms}
+.table-cross:nth-of-type(36){        animation-delay: 3300ms}
+.table-cross:nth-of-type(36)::after{ animation-delay: 3300ms}
+/*#server .block*/
+#server .box .block{
+	transition: background-color .3s;
+}
