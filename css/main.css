@@ -1,0 +1,706 @@
+
+*{margin: 0; padding: 0;}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+body{
+    background-color: black;
+    overflow: hidden;
+}
+p{
+    color : #0de3fe;
+    font-family: 'BankGothic Md BT', monospace;
+    font-size : 16px;
+    opacity : 1;
+    text-shadow: 0 0 10px #0de3fe;
+}
+sup,sub{
+    color : #0de3fe;
+    font-family: 'BankGothic Md BT', monospace;
+    font-size : 12px;
+    opacity : 1;
+    text-shadow: 0 0 10px #0de3fe;
+}
+p a{
+    font-size : 12px;
+}
+/*range*/
+.item{
+    display: block;
+    position: relative;
+    margin: 10px 0;
+}
+.item-deep{
+    display: block;
+    position: relative;
+    margin-right: -10px;
+    top: -10px;
+    left: -8px;
+}
+.item .pices{
+    width: 100%;
+}
+.form{
+    display: block;
+    float: left;
+    margin: 10px 8px;
+}
+#left-form{
+    margin-right: 10px;
+}
+#main{
+    display: block;
+    float: left;
+}
+/*banner*/
+.item .banner{
+    width: 100%;
+    top: 0;
+    margin-top: 0px;
+}
+.item .banner p{
+    font-size: 16px;
+}
+.banner-line{
+    height: 0px;
+    border-top: none;
+    border-bottom: 5px #0de3fe solid;
+    border-right: 5px transparent solid;
+    border-left: none;
+}
+/*Table Start*/
+.table-border{
+    float: left;
+    width: 475px;
+    height: 500px;
+    border-right: 2px #0de3fe solid;
+    border-bottom: 2px #0de3fe solid;
+    /*隐藏超出边界的+号*/
+    overflow: hidden;
+}
+.table-border1{
+    float: left;
+    width: 4px;
+    height: 500px;
+    border-right: 8px #0de3fe solid;
+    border-bottom: 2px #0de3fe solid;
+}
+.table-border2{
+    float: left;
+    width: 4px;
+    height: 500px;
+    border-right: 2px #0de3fe solid;
+    border-bottom: 2px #0de3fe solid;
+}
+.table-cross-box{
+    position: relative;
+    left: -47.5px;
+    top: -50px;
+    height: 600px;
+    width: 600px;
+}
+.table-cross {
+    /* +号,来自https://blog.csdn.net/acm765152844/article/details/51417562 */
+    background: #06717e;
+    height: 12px;
+    width: 2px;
+    position: relative;
+    float: left;
+    margin: 44px 46.5px;
+    z-index: -1;
+}
+.table-cross:after {
+    background: #06717e;
+    content: "";
+    height: 2px;
+    width: 12px;
+    position: absolute;
+    top: 5px;
+    left: -5px;
+}
+/*Table End*/
+/*Map Start*/
+.map-box{
+    position: relative;
+    height: 475px;
+    width: 475px;
+    margin: 5px;
+    text-align: center;
+}
+.map-cercle{
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    border-radius: 50%;
+}
+.map-cercle1{
+    width: 465px;
+    height: 465px;
+    border: 2px #06717e solid;
+}
+.map-cercle2{
+    width: 450px;
+    height: 450px;
+    border: 5px #06717e solid;
+}
+.map-cercle3{
+    background: url(../png/2d-cercle.png) no-repeat center center;
+}
+.map-cercle4{
+    width: 420px;
+    height: 420px;
+    border: 2px #06717e solid;
+}
+.map-cercle5{
+    background: url(../png/tick.png) no-repeat center center;
+}
+/*Map End*/
+/*Production Start*/
+/*wordl*/
+#production .wordn{
+    float: left;
+}
+.wordn .num{
+    font-size : 23px;
+    margin-bottom: -2px;
+}
+/*bar*/
+.box div[class^="bar"]{
+    width: 310px;
+    height: 10px;
+    margin-top: 12px;
+}
+#production .box{
+    float: left;
+    position: relative;
+    margin-top: -2px;
+    margin-left: 6px;
+}
+.box .bar{
+    background-color: #06717e;
+}
+.box .boxf{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box .barf{
+    background-color: #0de3fe;
+}
+/*wordr*/
+#production .wordp{
+    float: right;
+    margin-left: 5px;
+}
+.wordp .num{
+    margin-top: 6px;
+    text-align: right;
+}
+/*Production End*/
+/*schedules Start*/
+.schedule-tab{
+    height: 50px;
+    border: 2px solid #0de3fe;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+.schedule-name{
+    font-size: 23px;
+    float: left;
+}
+.schedule-percent{
+    font-size: 20px;
+    margin-top: 3px;
+    float: right;
+}
+.schedule-box{
+    position: relative;
+}
+.schedule-box .bar{
+    position: absolute;
+    width: 457px;
+    height: 10px;
+    margin-top: 5px;
+}
+.schedule-bar{
+    background-color: #06717e;
+}
+.schedule-barf{
+    background-color: #0de3fe;
+}
+/*Schedules End*/
+/*Server Start*/
+#server{
+    height: 220px;
+}
+.process-cpu{
+    position: absolute;
+    top: 30px;
+    width: 188px;
+    height: 188px;
+}
+.process-cpu-deep{
+    background: url(../png/cpu-deep.png) no-repeat center center;
+    transform:scaleX(-1);
+}
+.process-cpu-cercle1{
+    background: url(../png/cpu-cercle1.png) no-repeat center center;
+}
+.process-cpu-cercle2{
+    background: url(../png/cpu-cercle2.png) no-repeat center center;
+}
+.process-cpu-cercle3{
+    background: url(../png/cpu-cercle3.png) no-repeat center center;
+}
+.process-cpu-cercle4{
+    background: url(../png/cpu-cercle4.png) no-repeat center center;
+}
+.linear {
+    height:0px; 
+    position: absolute;
+    border: 1px solid #0de3fe;
+    background-color: #0de3fe;
+}
+#server .l1{
+    width: 100px;
+    top: 86px;
+    left: 80px;
+    transform:rotate(-45deg);
+}
+#server .l2{
+    width: 300px;
+    top: 50px;
+    left: 167px;
+}
+#server .l3{
+    width: 50px;
+    top: 105px;
+    left: 141px;
+    transform:rotate(-45deg);
+}
+#server .l4{
+    width: 300px;
+    top: 86px;
+    left: 185px;
+}
+#server .l5{
+    width: 30px;
+    top: 201px;
+    left: 143px;
+    transform:rotate(45deg);
+}
+#server .l6{
+    width: 300px;
+    top: 212px;
+    left: 170px;
+}
+#server .word{
+    position: absolute;
+    font-size: 18px;
+}
+#server .p1{
+    top: 30px;
+    left: 167px;
+}
+#server .p2{
+    top: 66px;
+    left: 185px;
+}
+#server .p3{
+    top: 192px;
+    left: 170px;
+}
+#server .box{
+    position: absolute;
+    top: 94px;
+    left: 194px;
+}
+#server .box .block{
+    float: left;
+    width: 20px;
+    height: 10px;
+    background-color: #06717e;
+    margin: 3px;
+}
+/*Server End*/
+/*Process Start*/
+#process{
+    text-align: center;
+}
+.process-line{
+    clear: both;
+    height: 2px;
+    background-color: #0de3fe;
+}
+.process-line-l{
+    float: left;
+    height: 1px;
+    width: 50px;
+    background-color: #0de3fe;
+}
+.process-line-r{
+    float: right;
+    height: 1px;
+    width: 50px;
+    background-color: #0de3fe;
+}
+#process .center{
+    margin: 0 auto;
+    display:inline-block
+}
+#process .cloumn{
+    float: left;
+    margin: 5px;
+}
+#process .cloumn-left{
+    text-align: left;
+}
+#process .cloumn-right{
+    text-align: right;
+}
+/*Process End*/
+/*Messenger Start*/
+/*Messenger Top*/
+#messanger{
+    width: 900px;
+    text-align: center;
+    /* 避免下面 .messanger-top3 的 display: inline-block; 产生行间距*/
+    font-size: 0;
+}
+.messanger-banner{
+    height: 18px;
+    border: 2px solid #0de3fe;
+    padding: 0 5px;
+    margin-top: 5px;
+}
+.messanger-banner p{
+    text-align: left;
+}
+.messanger-top1{
+    background-color: #0de3fe;
+    height: 10px;
+    margin-top: 2px;
+}
+.messanger-top2{
+    background-color: #0de3fe;
+    height: 2px;
+    margin-top: 2px;
+}
+.messanger-top3{
+    margin-top: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.messanger-top3-center{
+    background-color: #06717e;
+    height: 2px;
+    width: 600px;
+    margin: 0 1px;
+    float: left;
+}
+.messanger-top3-dot{
+    background-color: #06717e;
+    height: 2px;
+    width: 2px;
+    margin: 0 1px;
+    float: left;
+}
+.messanger-top4{
+    height: 0px;
+    width: 250px;
+    margin-top: 2px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-top: 2px #06717e solid;
+    border-bottom: none;
+    border-right: 2px transparent solid;
+    border-left: 2px transparent solid;
+}
+.messanger-top5{
+    height: 0px;
+    width: 250px;
+    margin-top: 2px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-top: none;
+    border-bottom: 2px #06717e solid;
+    border-right: 2px transparent solid;
+    border-left: 2px transparent solid;
+}
+/*Messenger Center*/
+.messanger-middle{
+    position: relative;
+    left: 27px;
+    margin: 0 auto;
+}
+/*Messanger Logo*/
+.messanger-logo{
+    float: left;
+    margin: 6px 10px 4px 10px;
+}
+.messanger-logo-box{
+    height: 200px;
+    width: 200px;
+    border: 2px #0de3fe solid;
+    background-color: #06717e;
+}
+.messanger-logo-box .logo{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(../png/logo.png) no-repeat center center;
+} 
+.messanger-logo-box .logo-lite{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(../png/logo-lite.png) no-repeat center center;
+} 
+/*Messanger Tab*/
+.messanger-tab-box{
+    float: left;
+    margin-top: -6px;
+}
+.messanger-tab{
+    position: relative;
+    width:300px;
+    height:40px;
+    margin-top: 14px;
+}
+.messanger-tab-l{
+    margin-right: 10px;
+    text-align: right;
+}
+.messanger-tab-r{
+    margin-left: 10px;
+    text-align: left;
+}
+.messanger-tab::before{
+    /* 梯形边框,魔改自 https://www.cnblogs.com/aloneCode/p/6927597.html */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #0de3fe;
+    transform: perspective(15px)scale(1.1,1.2) rotateX(3deg)
+}
+.messanger-tab-l::before{
+    transform-origin: bottom right;
+}
+.messanger-tab-r::before{
+    transform-origin: bottom left;
+}
+.messanger-tab-shape{
+    position: absolute;
+    top: -2.06px;
+    height: 42.06px;
+    width: 8px;
+    background-color: #0de3fe;
+}
+.messanger-tab-shape-l{
+    left: 302px;
+}
+.messanger-tab-shape-r{
+    left: -10px;
+}
+/*word*/
+.messanger-name{
+    font-size: 22px;
+    margin: 0 10px;
+}
+.messanger-detail{
+    font-size: 14px;
+    /*禁止换行*/
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.messanger-detail-l{
+    margin: -2px 10px 0 -10px;
+}
+.messanger-detail-r{
+    margin: -2px -10px 0 10px;
+}
+/*Messenger End*/
+/*Button Start*/
+.button-box1{
+    height: 76px;
+    border: 2px #06717e solid;
+}
+.button-box2{
+    margin: 10px;
+    height: 50px;
+    border: 2px #06717e solid;
+}
+.button-box3{
+    margin: 2px;
+    height: 42px;
+    border: 2px #06717e solid;
+}
+.button-word{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.button-box p{
+    color: #06717e;
+    text-shadow: none;
+    font-size: 46px;
+    margin: auto;
+    position: relative;
+    top: -5px;
+}
+/*Button End*/
+/*动态效果*/
+/*Button*/
+.button-box{
+	transition: box-shadow 1s;
+}
+#button:hover div{
+    border-color: #0de3fe;
+    box-shadow: 0 0 10px #0de3fe;
+}
+#button:hover p{
+    color: #0de3fe;
+}
+/*Logo*/
+@keyframes opacity{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+.logo-lite{
+    opacity:0;
+    animation:opacity 2.5s 5s infinite alternate;
+}
+/*map*/
+@keyframes cercle{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
+}
+.map-cercle3{
+    animation:cercle linear 20s infinite;
+}
+/*CPU*/
+@keyframes opacity-half{
+    0%{opacity:0;}
+    100%{opacity:0.3;}
+}
+@keyframes opacity-add{
+    0%{opacity:0.3;}
+    100%{opacity:1;}
+}
+.process-cpu-deep{
+    opacity:0.5;
+}
+.process-cpu-cercle1{
+    opacity:0;
+    animation:opacity-half 10s 35s,
+    opacity-add 5s 45s infinite alternate,
+    cercle linear 15s infinite;
+}
+.process-cpu-cercle2{
+    opacity:0;
+    animation:opacity-half 10s 20s,
+    opacity-add 15s 30s infinite alternate,
+    cercle linear 30s infinite;
+}
+.process-cpu-cercle3{
+    opacity:0;
+    animation:opacity-half 10s 5s,
+    opacity-add 15s 15s infinite alternate,
+    cercle linear 20s infinite reverse;
+}
+.process-cpu-cercle4{
+    opacity:0;
+    animation:opacity-half 5s,
+    opacity-add 30s 5s infinite alternate,
+    cercle linear 60s infinite;
+}
+/*Table*/
+@keyframes color{
+    0%{background-color: #06717e;}
+    100%{background-color: #0de3fe;}
+}
+.table-cross{
+    animation: color 3.6s infinite alternate;
+}
+.table-cross:after{
+    animation: color 3.6s infinite alternate;
+}
+.table-cross:nth-of-type(1){        animation-delay: 100ms}
+.table-cross:nth-of-type(1)::after{ animation-delay: 100ms}
+.table-cross:nth-of-type(2){        animation-delay: 200ms}
+.table-cross:nth-of-type(2)::after{ animation-delay: 200ms}
+.table-cross:nth-of-type(3){        animation-delay: 300ms}
+.table-cross:nth-of-type(3)::after{ animation-delay: 300ms}
+.table-cross:nth-of-type(4){        animation-delay: 400ms}
+.table-cross:nth-of-type(4)::after{ animation-delay: 400ms}
+.table-cross:nth-of-type(5){        animation-delay: 500ms}
+.table-cross:nth-of-type(5)::after{ animation-delay: 500ms}
+.table-cross:nth-of-type(6){        animation-delay: 600ms}
+.table-cross:nth-of-type(6)::after{ animation-delay: 600ms}
+.table-cross:nth-of-type(7){        animation-delay: 700ms}
+.table-cross:nth-of-type(7)::after{ animation-delay: 700ms}
+.table-cross:nth-of-type(8){        animation-delay: 800ms}
+.table-cross:nth-of-type(8)::after{ animation-delay: 800ms}
+.table-cross:nth-of-type(9){        animation-delay: 900ms}
+.table-cross:nth-of-type(9)::after{ animation-delay: 900ms}
+.table-cross:nth-of-type(10){        animation-delay: 1000ms}
+.table-cross:nth-of-type(10)::after{ animation-delay: 1000ms}
+.table-cross:nth-of-type(11){        animation-delay: 1100ms}
+.table-cross:nth-of-type(11)::after{ animation-delay: 1100ms}
+.table-cross:nth-of-type(12){        animation-delay: 1200ms}
+.table-cross:nth-of-type(12)::after{ animation-delay: 1200ms}
+.table-cross:nth-of-type(13){        animation-delay: 1300ms}
+.table-cross:nth-of-type(13)::after{ animation-delay: 1300ms}
+.table-cross:nth-of-type(14){        animation-delay: 1400ms}
+.table-cross:nth-of-type(14)::after{ animation-delay: 1400ms}
+.table-cross:nth-of-type(15){        animation-delay: 1500ms}
+.table-cross:nth-of-type(15)::after{ animation-delay: 1500ms}
+.table-cross:nth-of-type(16){        animation-delay: 1600ms}
+.table-cross:nth-of-type(16)::after{ animation-delay: 1600ms}
+.table-cross:nth-of-type(17){        animation-delay: 1700ms}
+.table-cross:nth-of-type(17)::after{ animation-delay: 1700ms}
+.table-cross:nth-of-type(18){        animation-delay: 1800ms}
+.table-cross:nth-of-type(18)::after{ animation-delay: 1800ms}
+.table-cross:nth-of-type(19){        animation-delay: 1900ms}
+.table-cross:nth-of-type(19)::after{ animation-delay: 1900ms}
+.table-cross:nth-of-type(20){        animation-delay: 2000ms}
+.table-cross:nth-of-type(20)::after{ animation-delay: 2000ms}
+.table-cross:nth-of-type(21){        animation-delay: 2100ms}
+.table-cross:nth-of-type(21)::after{ animation-delay: 2100ms}
+.table-cross:nth-of-type(22){        animation-delay: 2200ms}
+.table-cross:nth-of-type(22)::after{ animation-delay: 2200ms}
+.table-cross:nth-of-type(23){        animation-delay: 2300ms}
+.table-cross:nth-of-type(23)::after{ animation-delay: 2300ms}
+.table-cross:nth-of-type(24){        animation-delay: 2400ms}
+.table-cross:nth-of-type(24)::after{ animation-delay: 2400ms}
+.table-cross:nth-of-type(25){        animation-delay: 2500ms}
+.table-cross:nth-of-type(25)::after{ animation-delay: 2500ms}
+.table-cross:nth-of-type(26){        animation-delay: 2600ms}
+.table-cross:nth-of-type(26)::after{ animation-delay: 2600ms}
+.table-cross:nth-of-type(27){        animation-delay: 2700ms}
+.table-cross:nth-of-type(27)::after{ animation-delay: 2700ms}
+.table-cross:nth-of-type(28){        animation-delay: 2800ms}
+.table-cross:nth-of-type(28)::after{ animation-delay: 2800ms}
+.table-cross:nth-of-type(29){        animation-delay: 2900ms}
+.table-cross:nth-of-type(29)::after{ animation-delay: 2900ms}
+.table-cross:nth-of-type(30){        animation-delay: 3000ms}
+.table-cross:nth-of-type(30)::after{ animation-delay: 3000ms}
+.table-cross:nth-of-type(31){        animation-delay: 3100ms}
+.table-cross:nth-of-type(31)::after{ animation-delay: 3100ms}
+.table-cross:nth-of-type(32){        animation-delay: 3200ms}
+.table-cross:nth-of-type(32)::after{ animation-delay: 3200ms}
+.table-cross:nth-of-type(33){        animation-delay: 3300ms}
+.table-cross:nth-of-type(33)::after{ animation-delay: 3300ms}
+.table-cross:nth-of-type(34){        animation-delay: 3400ms}
+.table-cross:nth-of-type(34)::after{ animation-delay: 3400ms}
+.table-cross:nth-of-type(35){        animation-delay: 3500ms}
+.table-cross:nth-of-type(35)::after{ animation-delay: 3500ms}
+.table-cross:nth-of-type(36){        animation-delay: 3600ms}
+.table-cross:nth-of-type(36)::after{ animation-delay: 3600ms}
