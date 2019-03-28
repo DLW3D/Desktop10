@@ -16,6 +16,16 @@ p{
     opacity : 1;
     text-shadow: 0 0 10px #0de3fe;
 }
+sup,sub{
+    color : #0de3fe;
+    font-family: 'BankGothic Md BT', monospace;
+    font-size : 12px;
+    opacity : 1;
+    text-shadow: 0 0 10px #0de3fe;
+}
+p a{
+    font-size : 12px;
+}
 /*range*/
 .item{
     display: block;
@@ -182,6 +192,7 @@ p{
 /*wordr*/
 #production .wordp{
     float: right;
+    margin-left: 5px;
 }
 .wordp .num{
     margin-top: 6px;
@@ -295,11 +306,11 @@ p{
 }
 #server .p2{
     top: 66px;
-    left: 184px;
+    left: 185px;
 }
 #server .p3{
     top: 192px;
-    left: 167px;
+    left: 170px;
 }
 #server .box{
     position: absolute;
