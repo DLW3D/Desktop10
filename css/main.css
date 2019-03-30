@@ -13,15 +13,10 @@ p{
     color : #0de3fe;
     font-family: 'BankGothic Md BT', monospace;
     font-size : 16px;
-    opacity : 1;
-    text-shadow: 0 0 10px #0de3fe;
+    text-shadow: 0 0 10px;
 }
 sup,sub{
-    color : #0de3fe;
-    font-family: 'BankGothic Md BT', monospace;
     font-size : 12px;
-    opacity : 1;
-    text-shadow: 0 0 10px #0de3fe;
 }
 p a{
     font-size : 12px;
@@ -168,9 +163,14 @@ p a{
 }
 /*bar*/
 .box div[class^="bar"]{
-    width: 310px;
     height: 10px;
     margin-top: 12px;
+}
+.box .bar{
+    width: 310px;
+}
+.box .barf{
+    width: 0px;
 }
 #production .box{
     float: left;
@@ -191,7 +191,7 @@ p a{
 }
 /*wordr*/
 #production .wordp{
-    float: right;
+    float: right;   
     margin-left: 5px;
 }
 .wordp .num{
@@ -209,6 +209,9 @@ p a{
 .schedule-name{
     font-size: 23px;
     float: left;
+    width: 360px;
+    /*禁止换行*/
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .schedule-percent{
     font-size: 20px;
@@ -220,14 +223,15 @@ p a{
 }
 .schedule-box .bar{
     position: absolute;
-    width: 457px;
     height: 10px;
     margin-top: 5px;
 }
 .schedule-bar{
+    width: 450px;
     background-color: #06717e;
 }
 .schedule-barf{
+    width: 0px;
     background-color: #0de3fe;
 }
 /*Schedules End*/
@@ -723,4 +727,12 @@ p a{
 /*#server .block*/
 #server .box .block{
 	transition: background-color .3s;
+}
+/* process */
+#production .boxf .barf{
+	transition: width .3s;
+}
+/* schedule */
+#schedules .schedule-barf{
+	transition: width .3s;
 }

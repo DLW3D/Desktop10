@@ -1,3 +1,4 @@
+//时间
 setInterval("fun('banner-word')",1);
 function fun(timeID){ 
     var date = new Date();  //创建对象  
@@ -38,6 +39,7 @@ function fun(timeID){ 
     $("#"+timeID).text("BPX so-terminal " + time);
 }
 
+// cpu 矩形阵列
 var blocks;
 $(document).ready(function(){
     // #server .block状态初始化
@@ -59,10 +61,78 @@ function block_change(){
         
     }
 }
-
 //随机函数:在范围内取整
 function random(Min, Max) {
     var Range = Max - Min;
     var Rand = Math.random();
     return(Min + Math.round(Rand * Range));
 }
+
+//process
+var process_data = new Array();
+var process_name;
+var process_p;
+var process_bar;
+$(document).ready(function(){
+    process_data = [7200,0,130,1300]
+    process_name = $("#production .wordn .num");
+    process_p = $("#production .wordp .num");
+    process_bar = $("#production .boxf .barf");
+    setInterval("process_up()",100);
+});
+function process_up(){
+    for (var i=0;i<4;i++){
+        process_data[i] += random(-100,100);
+        if (process_data[i] < 0) process_data[i] = 0;
+        if (process_data[i] > 9999) process_data[i] = 9999;
+        $(process_p[i]).html(process_data[i]+"<a>/d</a>");
+        $(process_bar[i]).css("width",310*process_data[i]/9999);
+    }
+}
+
+//Schedule
+var schedule_data = new Array();
+var schedule_tab;
+var schedule_name;
+var schedule_p;
+var schedule_bar;
+$(document).ready(function(){
+    schedule_data = [12,100,58,89]
+    // state 0:执行中 1:就绪 -1:等待    
+    schedule_state = [-1,1,0,2]
+    schedule_tab = $("#schedules .schedule-tab");
+    schedule_name = $("#schedules .schedule-name");
+    schedule_p = $("#schedules .schedule-percent");
+    schedule_bar = $("#schedules .schedule-barf");
+    setInterval("schedule_up()",1000);
+});
+function schedule_up(){
+    for (var i=0;i<4;i++){
+        switch(schedule_state[i]){
+            case 0:
+                schedule_data[i] += 0.0001*random(0,100);
+                $(schedule_p[i]).html((parseInt(schedule_data[i]*10)/10).toFixed(1)+"<a>%</a>");
+                if (schedule_data[i] >= 100){
+                    schedule_data[i] = 100;
+                    schedule_state[i] = 1;
+                    $(schedule_p[i]).html("ready");
+                }
+                break;
+            case 1:
+                $(schedule_p[i]).html("ready");
+                break;
+            case -1:
+                $(schedule_p[i]).html("waiting");
+                break;
+            default:
+                $(schedule_p[i]).html("error");
+                $(schedule_tab[i]).css("border-color","red");
+                $(schedule_name[i]).css("color","red");
+                $(schedule_p[i]).css("color","red");
+                $(schedule_bar[i]).css("background-color","red");
+                $($("#schedules .schedule-bar")[i]).css("background-color","darkred")
+        }
+        $(schedule_bar[i]).css("width",parseInt(450*schedule_data[i]/100));
+    }
+}
+
