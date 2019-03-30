@@ -68,25 +68,25 @@ function random(Min, Max) {
     return(Min + Math.round(Rand * Range));
 }
 
-//process
-var process_data = new Array();
-var process_name;
-var process_p;
-var process_bar;
+//production
+var production_data = new Array();
+var production_name;
+var production_p;
+var production_bar;
 $(document).ready(function(){
-    process_data = [7200,0,130,1300]
-    process_name = $("#production .wordn .num");
-    process_p = $("#production .wordp .num");
-    process_bar = $("#production .boxf .barf");
-    setInterval("process_up()",100);
+    production_data = [7200,0,130,1300]
+    production_name = $("#production .wordn .num");
+    production_p = $("#production .wordp .num");
+    production_bar = $("#production .boxf .barf");
+    setInterval("production_up()",100);
 });
-function process_up(){
+function production_up(){
     for (i=0;i<4;i++){
-        process_data[i] += random(-100,100);
-        if (process_data[i] < 0) process_data[i] = 0;
-        if (process_data[i] > 9999) process_data[i] = 9999;
-        $(process_p[i]).html(process_data[i]+"<a>/d</a>");
-        $(process_bar[i]).css("width",310*process_data[i]/9999);
+        production_data[i] += random(-100,100);
+        if (production_data[i] < 0) production_data[i] = 0;
+        if (production_data[i] > 9999) production_data[i] = 9999;
+        $(production_p[i]).html(production_data[i]+"<a>/d</a>");
+        $(production_bar[i]).css("width",310*production_data[i]/9999);
     }
 }
 
@@ -165,4 +165,61 @@ function format() {
     }
     return str;
 };
+
+//process
+var process_data = new Array();
+var process_data_ref = ["PID","USER","PR","%CPU","%MEM","COMMAND"];
+var process_c;
+$(document).ready(function(){
+    process_c=$("#process .cloumn");
+    process_data_pusher(9052,"matlab",40,83.1,44.3,"um-simulator");
+    process_data_pusher(3213,   "root", 0,  1.3,    4.7,"system");
+    process_data_pusher(43,     "sys",  20, 0.8,    0.1,"bpp");
+    process_data_pusher(523,    "root", 20, 0.1,    0.0,"top");
+    process_data_pusher(426,    "root", 20, 0.0,    0.0,"sshd");
+    process_data_pusher(13917,  "sys",  20, 0.0,    0.0,"ttc");
+    process_data_pusher(824,    "root", 20, 0.0,    0.0,"pref");
+    process_data_pusher(4021,   "www",  20, 0.0,    0.0,"httpd");
+    process_data_pusher(1505,   "root", 10, 3.7,    4.2,"observer");
+    process_data_pusher(6212,   "www",  20, 0.0,    0.0,"httpd");
+    process_data_pusher(133,    "cst",  40, 0.0,    0.0,"cst-scanner");
+    process_data_pusher(9214,   "ob",   10, 0.0,    0.0,"obos");
+    process_data_pusher(2715,   "root", 20, 0.0,    0.0,"bash");
+    process_data_pusher(5890,   "root", 20, 0.0,    0.0,"rtkeeker");
+    process_data_pusher();
+    setInterval("process_up()",1000);
+});
+function process_up(){
+    //排序
+    randomOrder(process_data);
+    //显示
+    $.each(process_c, function(ii, iitem){      
+        $.each(iitem.children, function(i, item){
+            if(i==0) 
+                $(item).text(process_data_ref[ii]);
+            else if(ii==3||ii==4)
+                $(item).text(process_data[i-1][ii].toFixed(1));
+            else
+                $(item).text(process_data[i-1][ii]);
+        });  
+    });  
+}
+function process_data_pusher(){
+    if (arguments.length != 6)
+        return null;
+    process_data.push([arguments[0],arguments[1],arguments[2],arguments[3],arguments[4],arguments[5]])
+}
+// 数组随机排序,来自 https://www.cnblogs.com/getdaydayup/p/6592154.html
+function randomOrder(arr){
+    var t;
+    for(var i = 0;i < arr.length; i++){
+        var rand = parseInt(Math.random()*arr.length);
+        t = arr[rand];
+        arr[rand] =arr[i];
+        arr[i] = t;
+    }
+}
+
+
+
 
