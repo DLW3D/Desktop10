@@ -202,7 +202,16 @@ function process_up(){
             else
                 $(item).text(process_data[i-1][ii]);
         });  
-    });  
+    });
+    /*
+    //闪烁
+    var randList = random(1,process_c[0].children.length-1)
+    $.each(process_c, function(ii, iitem){
+        var rdl = randList;
+        $(iitem.children[rdl]).css("color","white");
+        setTimeout(function(){$(iitem.children[rdl]).css("color","#0de3fe");},600)
+    });
+    */
 }
 function process_data_pusher(){
     if (arguments.length != 6)

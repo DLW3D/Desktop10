@@ -728,11 +728,15 @@ p a{
 #server .box .block{
 	transition: background-color .3s;
 }
-/* process */
+/* production */
 #production .boxf .barf{
 	transition: width .3s;
 }
 /* schedule */
 #schedules .schedule-barf{
 	transition: width .3s;
+}
+/* process */
+#process .cloumn p{
+	transition: color .3s;
 }
