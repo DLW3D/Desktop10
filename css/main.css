@@ -5,6 +5,23 @@
     display: block;
     clear: both;
 }
+.noselect {
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    
+    -khtml-user-select: none; /* Konqueror */
+    
+    -moz-user-select: none; /* Firefox */
+    
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    
+    user-select: none; /* Non-prefixed version, currently
+    
+    not supported by any browser */
+    
+    }
 body{
     background-color: black;
     overflow: hidden;
@@ -485,7 +502,12 @@ p a{
     margin-left: 10px;
     text-align: left;
 }
-.messanger-tab::before{
+.messanger-fly{
+    position: relative;
+    width:300px;
+    height:40px;
+}
+.messanger-fly::before{
     /* 梯形边框,魔改自 https://www.cnblogs.com/aloneCode/p/6927597.html */
     content: '';
     position: absolute;
@@ -494,12 +516,13 @@ p a{
     right: 0;
     bottom: 0;
     border: 2px solid #0de3fe;
-    transform: perspective(15px)scale(1.1,1.2) rotateX(3deg)
+    transform: perspective(15px)scale(1.1,1.2) rotateX(3deg);
+    z-index: 1;
 }
-.messanger-tab-l::before{
+.messanger-fly-l::before{
     transform-origin: bottom right;
 }
-.messanger-tab-r::before{
+.messanger-fly-r::before{
     transform-origin: bottom left;
 }
 .messanger-tab-shape{
@@ -507,13 +530,43 @@ p a{
     top: -2.06px;
     height: 42.06px;
     width: 8px;
-    background-color: #0de3fe;
+    background-color: #06717e
 }
 .messanger-tab-shape-l{
     left: 302px;
 }
 .messanger-tab-shape-r{
     left: -10px;
+}
+.messanger-tab-shadow{
+    position: relative;
+    width:300px;
+    height:40px;
+    margin-top: 2px;
+}
+.messanger-tab-shadow-l{
+    margin-left: -302px;
+}
+.messanger-tab-shadow-r{
+    margin-left: +10px;
+}
+.messanger-tab-shadow::before{
+    /* 梯形边框,魔改自 https://www.cnblogs.com/aloneCode/p/6927597.html */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #06717e;
+    transform: perspective(15px)scale(1.1,1.2) rotateX(3deg);
+    z-index: 0;
+}
+.messanger-tab-shadow-l::before{
+    transform-origin: bottom right;
+}
+.messanger-tab-shadow-r::before{
+    transform-origin: bottom left;
 }
 /*word*/
 .messanger-name{
@@ -740,3 +793,10 @@ p a{
 #process .cloumn p{
 	transition: color .3s;
 }
+/* messanger */
+#messanger .messanger-fly{
+    transition: left .5s;
+    /* visibility: hidden; */
+}
+
+

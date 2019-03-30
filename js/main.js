@@ -229,6 +229,82 @@ function randomOrder(arr){
     }
 }
 
+//messanger
+var messanger_state = [0,0,0,0,0,0,0,0];
+var messanger_ref = [0,4,1,5,2,6,3,7]
+var messanger_ref_rev = [0,2,4,6,1,3,5,7]
+var messanger_tab;
+var messanger_f;
+var messanger_f_l;
+var messanger_f_r;
+var messanger_name;
+var messanger_detail;
+var messanger_shape;
+var messanger_example=[
+    ["unknow message","message detail long long long long long end"],
+    ["unknow message","message detail long long long long long start"],
+    ["unknow message","message detail"],
+    ["unknow message","message detail 1"],
+    ["unknow message","message detail long"],
+    ["unknow message","message detail long long"],
+    ["unknow message","message detail long long ago"],
+    ["unknow message","message detail long long after"],
+    ];
+$(document).ready(function(){
+    messanger_tab = $("#messanger .messanger-tab");
+    messanger_f = $("#messanger .messanger-fly");
+    messanger_f_l = $("#messanger .messanger-fly-l");
+    messanger_f_r = $("#messanger .messanger-fly-r");
+    messanger_name = $("#messanger .messanger-name");
+    messanger_detail = $("#messanger .messanger-detail");
+    messanger_shape = $("#messanger .messanger-tab-shape");
+    
+    messanger_f_l.css("left","-1000px");
+    messanger_f_r.css("left","+1000px");
 
-
+    for(i=0;i<messanger_tab.length;i++){
+        $(messanger_tab[i]).attr("onclick","messanger_read("+i+")");
+    }
+    messanger_up()
+    setInterval("messanger_up()",60000);
+});
+function messanger_up(){
+    var rand = random(0,7);
+    messageer_send(messanger_example[rand][0],messanger_example[rand][1])
+}
+// 新的消息
+function messageer_send(name,detail){
+    var pos = -1;
+    for(i=0;i<messanger_f.length;i++){
+        if(messanger_state[i] == 0){
+            pos = i;
+            break;
+        }
+    }
+    if(pos == -1){
+        return false;
+    }else{
+        pos = messanger_ref[pos];
+    }
+    
+    $(messanger_name[pos]).text(name);
+    $(messanger_detail[pos]).text(detail);
+    $(messanger_f[pos]).css("left","0");
+    setTimeout(function(){
+        $(messanger_shape[pos]).css("background-color","#0de3fe")
+        messanger_state[messanger_ref_rev[pos]] = 1;
+    },600)
+}
+// 点击事件
+function messanger_read(index){
+    var dir;
+    if(messanger_state[messanger_ref_rev[index]]==1){
+        dir = index<4 ? 0 : 1;
+        $(messanger_shape[index]).css("background-color","#06717e")
+        setTimeout(function(){
+            $(messanger_f[index]).css("left",dir==0?"-1000px":"+1000px");
+            messanger_state[messanger_ref_rev[index]]=0;
+        },100);
+    }
+}
 
