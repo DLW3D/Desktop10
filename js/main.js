@@ -81,7 +81,7 @@ $(document).ready(function(){
     setInterval("process_up()",100);
 });
 function process_up(){
-    for (var i=0;i<4;i++){
+    for (i=0;i<4;i++){
         process_data[i] += random(-100,100);
         if (process_data[i] < 0) process_data[i] = 0;
         if (process_data[i] > 9999) process_data[i] = 9999;
@@ -91,15 +91,14 @@ function process_up(){
 }
 
 //Schedule
-var schedule_data = new Array();
+var schedule_data = [12,100,58,89];
+// state 0:执行中 1:就绪 -1:等待    
+var schedule_state = [-1,1,0,2]
 var schedule_tab;
 var schedule_name;
 var schedule_p;
 var schedule_bar;
 $(document).ready(function(){
-    schedule_data = [12,100,58,89]
-    // state 0:执行中 1:就绪 -1:等待    
-    schedule_state = [-1,1,0,2]
     schedule_tab = $("#schedules .schedule-tab");
     schedule_name = $("#schedules .schedule-name");
     schedule_p = $("#schedules .schedule-percent");
@@ -107,7 +106,7 @@ $(document).ready(function(){
     setInterval("schedule_up()",1000);
 });
 function schedule_up(){
-    for (var i=0;i<4;i++){
+    for (i=0;i<4;i++){
         switch(schedule_state[i]){
             case 0:
                 schedule_data[i] += 0.0001*random(0,100);
@@ -135,4 +134,35 @@ function schedule_up(){
         $(schedule_bar[i]).css("width",parseInt(450*schedule_data[i]/100));
     }
 }
+
+//cpu
+var cpu_data = [23.7,5.20,89];
+var cpu_word = ["core temperature : {0}<sup>℃</sup>","main frequency : {0}<sup>GHz</sup>","cpu utilization : {0}<sup>%</sup>"];
+var cpu_p;
+$(document).ready(function(){
+    cpu_p = $("#server .word");
+    cpu_up();
+    setInterval("cpu_up()",1000);
+});
+function cpu_up(){
+    cpu_data[0] += 0.01 * (cpu_data[0]<98 ? random(-15,200) : random(-20,15));
+    cpu_data[1] += 0.01 * random(-2,2);
+    cpu_data[2] += 0.01 * random(-100,100);
+    if (cpu_data[2]>100)cpu_data[2]=100;
+    if (cpu_data[2]<0)cpu_data[2]=0;
+    for (i=0;i<3;i++){
+        $(cpu_p[i]).html(format(cpu_word[i],cpu_data[i]));
+    }
+}
+//来自 https://www.cnblogs.com/jxsimon/p/5053810.html
+function format() {
+    if (arguments.length == 0)
+        return null;
+    var str = arguments[0];
+    for ( var i = 1; i < arguments.length; i++) {
+        var re = new RegExp('\\{' + (i - 1) + '\\}', 'gm');
+        str = str.replace(re, arguments[i].toFixed(2));
+    }
+    return str;
+};
 
