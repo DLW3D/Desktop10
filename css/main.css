@@ -1,5 +1,11 @@
 
 *{margin: 0; padding: 0;}
+/* 引入字体文件,来自 https://blog.csdn.net/qq_26212731/article/details/78674235 */
+@font-face {
+    font-family: 'bgmb';
+    font-style: bold;
+    src: url("../font/bgothm.ttf") format("truetype");
+}
 .clearfix::after{
     content: "";
     display: block;
@@ -28,7 +34,7 @@ body{
 }
 p{
     color : #0de3fe;
-    font-family: 'BankGothic Md BT', monospace;
+    font-family: 'bgmb', monospace;
     font-size : 16px;
     text-shadow: 0 0 10px;
 }
@@ -167,6 +173,110 @@ p a{
 }
 .map-cercle5{
     background: url(../png/tick.png) no-repeat center center;
+    opacity: .8;
+}
+.map-cercle6{
+    width: 420px;
+    height: 420px;
+    z-index: -1;
+    overflow: hidden;
+}
+.map-deep{
+    width: 874px;
+    height: 492px;
+    display: block;
+    background: url(../png/map.png) no-repeat;
+    background-position: 40% 100%;
+    position: relative;
+    /* top: [0% -16%] */
+    top: 0%;
+    /* left: [0% -108%] */
+    left: 0%;
+}
+/* 警告符号 */
+/* 等边三角形,来自 https://blog.csdn.net/qq_40002902/article/details/79883556 */
+.map-warn-t{
+    position: absolute;
+    left: 200px;
+    top: 200px;
+
+    height: 0px;
+	width: 0px;
+	z-index: 1;/*这个与后面的空心三角形有关*/
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 19px solid #0de3fe;
+}
+.map-warn-t::before{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 4px;
+    left: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 13px solid black;
+}
+.map-warn-t::after{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: -2.5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #0de3fe;
+    box-shadow: 0 0 10px #0de3fe;
+}
+/* 正方形 */
+.map-warn-s{
+    position: absolute;
+    left: 250px;
+    top: 200px;
+
+    height: 15px;
+	width: 15px;
+	z-index: 1;
+    border: 2px #0de3fe solid;
+    box-shadow: 0 0 10px #0de3fe;
+}
+.map-warn-s::after{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #0de3fe;
+    box-shadow: 0 0 10px #0de3fe;
+}
+/* 圆形 */
+.map-warn-c{
+    position: absolute;
+    left: 300px;
+    top: 200px;
+
+    height: 15px;
+	width: 15px;
+	z-index: 1;
+    border-radius: 50%;
+    border: 2px #0de3fe solid;
+    box-shadow: 0 0 10px #0de3fe;
+}
+.map-warn-c::after{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #0de3fe;
+    box-shadow: 0 0 10px #0de3fe;
 }
 /*Map End*/
 /*Production Start*/
@@ -798,5 +908,10 @@ p a{
     transition: left .5s;
     /* visibility: hidden; */
 }
-
-
+/* Map */
+.map-warn{
+    animation:opacity 5s infinite alternate;
+}
+.map-deep{
+    transition: left 1s, top 1s;
+}

@@ -265,7 +265,7 @@ $(document).ready(function(){
     for(i=0;i<messanger_tab.length;i++){
         $(messanger_tab[i]).attr("onclick","messanger_read("+i+")");
     }
-    messanger_up()
+    messanger_up();
     setInterval("messanger_up()",60000);
 });
 function messanger_up(){
@@ -307,4 +307,31 @@ function messanger_read(index){
         },100);
     }
 }
+
+//map
+var map_d;
+var map_ref = ["t","c","s"];
+$(document).ready(function(){
+    map_d = $("#map .map-deep");
+    //清空
+    map_d.empty();
+    //初始位置
+    map_d.css("top","-15%");
+    map_d.css("left","-40%");
+    setInterval("map_up()",1000);
+});
+function map_up(){
+    // 地图规律性移动
+    if(random(0,2)==0){
+        map_d.css("left",random(-454,0));
+        map_d.css("top",random(-70,0));
+    }
+    // 警示标志随机出现
+    var ad = $("<div></div>").addClass("map-warn map-warn-"+map_ref[random(0,2)]);
+    ad.css("left",random(0,874))
+    ad.css("top",random(0,429))
+    map_d.append(ad);
+    setTimeout(function(){ad.remove()},10000);
+}
+
 
