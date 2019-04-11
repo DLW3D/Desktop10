@@ -18,3 +18,10 @@ body{
     border: 2px #0de3fe solid;
     background-color: black;
 }
+.log-word{
+    word-break: break-all;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    overflow: hidden;
+}

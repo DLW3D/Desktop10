@@ -1,19 +1,17 @@
-var logScreen;
+
 var logWindow = [];
 $(document).ready(function(){
     $("#wrap").css("display","none");
-    logScreen = $(".log-screen");
+    var logScreen = $(".log-screen");
+    logWindow.push($(".log-window:nth-of-type(1)"));
     logWindow.push($(".log-window:nth-of-type(2)"));
     logWindow.push($(".log-window:nth-of-type(3)"));
-    logWindow.push($(".log-window:nth-of-type(4)"));
-    ScreenLog();
+    ScreenLog(logScreen,function(){windowLog();},1);
 });
-var logIndex = 0;
-var logWords = "";
-function ScreenLog(){
+function ScreenLog(logScreen,callback,speed=50,line=41,logIndex=0,logWords=""){
     logWords += ArrayBootLog[logIndex++].replace(/ /g,"&nbsp;") + "<br>";
-    //超过50行开始向下对齐
-    if (logIndex == 41){
+    //超过41;14行开始向下对齐
+    if (logIndex == line){
         logScreen.css("top","auto");
     }
     //超过60行开始每次切除开头一行
@@ -24,20 +22,33 @@ function ScreenLog(){
     //检查是否结束
     if (logIndex>=ArrayBootLog.length) {
         logScreen.css("display","none");
-        windowLog();
+        callback();
         return;
     }
     //判断下一行
     if (ArrayBootLog[logIndex].slice(0,1)=="["){
         //新的一行,设置时间间隔
-        setTimeout(ScreenLog, Math.floor(Math.random()*50))
+        setTimeout(ScreenLog, Math.floor(Math.random()*speed),logScreen,callback,speed,line,logIndex,logWords)
     }else{
         //不是新的一行,直接输出
-        ScreenLog();
+        ScreenLog(logScreen,callback,speed,line,logIndex,logWords);
     }
 }
 function windowLog(){
-    logWindow[0].css({"display":"block","top":"10%","left":"10%"});
-    logWindow[1].css({"display":"block","top":"25%","left":"25%"});
-    logWindow[2].css({"display":"block","top":"40%","left":"40%"});
+    var logWindowWord = [];
+    logWindowWord[0] = $(".log-window:nth-of-type(1) p");
+    logWindowWord[1] = $(".log-window:nth-of-type(2) p");
+    logWindowWord[2] = $(".log-window:nth-of-type(3) p");
+    setTimeout(function(){
+        logWindow[0].css({"display":"block","top":"10%","left":"10%"});
+        ScreenLog(logWindowWord[0],function(){logWindow[0].css("display","none")},1,14);
+    },1);
+    setTimeout(function(){
+        logWindow[1].css({"display":"block","top":"25%","left":"25%"});
+        ScreenLog(logWindowWord[1],function(){logWindow[1].css("display","none")},1,14);
+    },500);
+    setTimeout(function(){
+        logWindow[2].css({"display":"block","top":"40%","left":"40%"});
+        ScreenLog(logWindowWord[2],function(){logWindow[2].css("display","none")},1,14);
+    },1000);
 }
