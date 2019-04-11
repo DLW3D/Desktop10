@@ -1,5 +1,14 @@
+//UI启动
+//使用"UIready("代替"$(document).ready(",使UI在系统启动完毕后再启动.
+FunctionReady = []
+function UIready(fun){
+    FunctionReady.push(fun);
+}
+
 //时间
-setInterval("fun('banner-word')",1);
+UIready(function(){
+    setInterval("fun('banner-word')",1);
+});
 function fun(timeID){ 
     var date = new Date();  //创建对象  
     var y = date.getFullYear();     //获取年份  
@@ -41,15 +50,16 @@ function fun(timeID){ 
 
 // cpu 矩形阵列
 var blocks;
-$(document).ready(function(){
+UIready(function(){
     // #server .block状态初始化
     blocks = $("#server .box>*");
     blocks.each(function(index){
         $(this).css("background-color", "#06717e");
     });
+    
+    // #server .block状态变化
+    setTimeout(function(){setInterval("block_change()",100)},15000);
 });
-// #server .block状态变化
-setTimeout(function(){setInterval("block_change()",100)},15000);
 function block_change(){
     if (random(0,9)==0){
         $(blocks[random(0,blocks.length)]).css("background-color", "#0de3fe");
@@ -73,12 +83,13 @@ var production_data = new Array();
 var production_name;
 var production_p;
 var production_bar;
-$(document).ready(function(){
+UIready(function(){
     production_data = [7200,0,130,1300]
     production_name = $("#production .wordn .num");
     production_p = $("#production .wordp .num");
     production_bar = $("#production .boxf .barf");
-    setInterval("production_up()",100);
+    //延迟开始,与显示同步
+    setTimeout(function(){setInterval("production_up()",100);},4100);
 });
 function production_up(){
     for (i=0;i<4;i++){
@@ -98,12 +109,13 @@ var schedule_tab;
 var schedule_name;
 var schedule_p;
 var schedule_bar;
-$(document).ready(function(){
+UIready(function(){
     schedule_tab = $("#schedules .schedule-tab");
     schedule_name = $("#schedules .schedule-name");
     schedule_p = $("#schedules .schedule-percent");
     schedule_bar = $("#schedules .schedule-barf");
-    setInterval("schedule_up()",1000);
+    //延迟开始,与显示同步
+    setTimeout(function(){setInterval("schedule_up()",100);},4600);
 });
 function schedule_up(){
     for (i=0;i<4;i++){
@@ -139,7 +151,7 @@ function schedule_up(){
 var cpu_data = [23.7,5.20,89];
 var cpu_word = ["core temperature : {0}<sup>℃</sup>","main frequency : {0}<sup>GHz</sup>","cpu utilization : {0}<sup>%</sup>"];
 var cpu_p;
-$(document).ready(function(){
+UIready(function(){
     cpu_p = $("#server .word");
     cpu_up();
     setInterval("cpu_up()",1000);
@@ -170,7 +182,7 @@ function format() {
 var process_data = new Array();
 var process_data_ref = ["PID","USER","PR","%CPU","%MEM","COMMAND"];
 var process_c;
-$(document).ready(function(){
+UIready(function(){
     process_c=$("#process .cloumn");
     process_data_pusher(9052,"matlab",40,83.1,44.3,"um-simulator");
     process_data_pusher(3213,   "root", 0,  1.3,    4.7,"system");
@@ -250,7 +262,7 @@ var messanger_example=[
     ["unknow message","message detail long long ago"],
     ["unknow message","message detail long long after"],
     ];
-$(document).ready(function(){
+UIready(function(){
     messanger_tab = $("#messanger .messanger-tab");
     messanger_f = $("#messanger .messanger-fly");
     messanger_f_l = $("#messanger .messanger-fly-l");
@@ -311,7 +323,7 @@ function messanger_read(index){
 //map
 var map_d;
 var map_ref = ["t","c","s"];
-$(document).ready(function(){
+UIready(function(){
     map_d = $("#map .map-deep");
     //清空
     map_d.empty();
