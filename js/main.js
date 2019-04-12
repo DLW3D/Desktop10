@@ -278,7 +278,7 @@ UIready(function(){
         $(messanger_tab[i]).attr("onclick","messanger_read("+i+")");
     }
     messanger_up();
-    setInterval("messanger_up()",60000);
+    setTimeout(function(){setInterval("messanger_up()",60000);},3000);
 });
 function messanger_up(){
     var rand = random(0,7);
@@ -302,9 +302,9 @@ function messageer_send(name,detail){
     $(messanger_name[pos]).text(name);
     $(messanger_detail[pos]).text(detail);
     $(messanger_f[pos]).css("left","0");
+    messanger_state[messanger_ref_rev[pos]] = 1;
     setTimeout(function(){
-        $(messanger_shape[pos]).css("background-color","#0de3fe")
-        messanger_state[messanger_ref_rev[pos]] = 1;
+        $(messanger_shape[pos]).css("background-color","#0de3fe");
     },600)
 }
 // 点击事件

@@ -51,7 +51,8 @@ function windowLog(){
     },500);
     setTimeout(function(){
         logWindow[2].css({"display":"block","top":"40%","left":"25%"});
-        PrintLog(logWindowWord[2],function(){logWindow[2].css("display","none");setTimeout(function(){UIBoot();},1000)},1,14);
+        PrintLog(logWindowWord[2],function(){logWindow[2].css("display","none");
+        UIBoot();},1,14);
     },1000);
 }
 // 启动UI界面
