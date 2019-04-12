@@ -460,6 +460,7 @@ p a{
 /*Process Start*/
 #process{
     text-align: center;
+    margin: 20px 0;
 }
 .process-line{
     clear: both;

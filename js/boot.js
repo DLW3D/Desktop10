@@ -9,7 +9,7 @@ $(document).ready(function(){
     PrintLog(logScreen,function(){windowLog();},30);
 });
 // Log
-function PrintLog(logScreen,callback,speed=50,line=51,logIndex=0,logWords=""){
+function PrintLog(logScreen,callback,speed=50,line=60,logIndex=0,logWords=""){
     logWords += ArrayBootLog[logIndex++].replace(/ /g,"&nbsp;") + "<br>";
     //超过41;14行开始向下对齐
     if (logIndex == line){
