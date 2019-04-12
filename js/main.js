@@ -253,14 +253,26 @@ var messanger_name;
 var messanger_detail;
 var messanger_shape;
 var messanger_example=[
-    ["unknow message","message detail long long long long long end"],
-    ["unknow message","message detail long long long long long start"],
-    ["unknow message","message detail"],
-    ["unknow message","message detail 1"],
-    ["unknow message","message detail long"],
-    ["unknow message","message detail long long"],
-    ["unknow message","message detail long long ago"],
-    ["unknow message","message detail long long after"],
+    ["daily news","NIU will release new vehicles"],
+    ["daily news","a demonstration took place in parior"],
+    ["daily news","drastic changes of spatial stability in southeast of"],
+    ["daily news","the beacon in pangu remain unstable"],
+    ["daily news","cathaya pharmaceutical's leaker said that"],
+    ["daily news","bumper year for corn"],
+    ["daily news","water pollution has become worse in"],
+    ["daily news","heavy rainfall and flood took place over the wide regions of explorer area"],
+    ["daily news","the drought expected to last through at least the end of october"],
+    ["weather forecast","heavy rain has been forecast for center tower and southern NIU"],
+    ["weather forecast","spatial stability drastic reduction in southeast of"],
+    ["from observer","3 bugs fixed in bluesky"],
+    ["from hapalochlaen","mission sanction complete"],
+    ["from material factory","adjustment of production structure"],
+    ["from material factory","new materials has been developed"],
+    ["from material factory","lack of ethylene"],
+    ["schedule","material sourcing event"],
+    ["new reqiest","request for high purity charcoal crystal"],
+    ["secret information","click to read"],
+    ["unknow message","&#104;&#101;&#108;&#112;&#32;&#109;&#101;"],
     ];
 UIready(function(){
     messanger_tab = $("#messanger .messanger-tab");
@@ -281,7 +293,7 @@ UIready(function(){
     setTimeout(function(){setInterval("messanger_up()",60000);},3000);
 });
 function messanger_up(){
-    var rand = random(0,7);
+    var rand = random(0,messanger_example.length);
     messageer_send(messanger_example[rand][0],messanger_example[rand][1])
 }
 // 新的消息
