@@ -46,11 +46,11 @@ function windowLog(){
         PrintLog(logWindowWord[0],function(){logWindow[0].css("display","none");},1,14);
     },1);
     setTimeout(function(){
-        logWindow[1].css({"display":"block","top":"25%","left":"25%"});
+        logWindow[1].css({"display":"block","top":"25%","left":"40%"});
         PrintLog(logWindowWord[1],function(){logWindow[1].css("display","none");},1,14);
     },500);
     setTimeout(function(){
-        logWindow[2].css({"display":"block","top":"40%","left":"40%"});
+        logWindow[2].css({"display":"block","top":"40%","left":"25%"});
         PrintLog(logWindowWord[2],function(){logWindow[2].css("display","none");setTimeout(function(){UIBoot();},1000)},1,14);
     },1000);
 }
